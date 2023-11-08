@@ -105,20 +105,26 @@ public class BasePage {
 
     /********* Botao ************/
 
-    public void clicarBotao(String id) {
-        getDriver().findElement(By.id(id)).click();
+    public void clicarBotao(By by) {
+        getDriver().findElement(by).click();
     }
 
+    public void clicarBotao(String id) {
+        getDriver().findElement(By.id(id));
+    }
     public String obterValueElemento(String id) {
         return getDriver().findElement(By.id(id)).getAttribute("value");
     }
 
     /********* Link ************/
 
+    public void clicarLink(By by) {
+        getDriver().findElement((by)).click();
+    }
+
     public void clicarLink(String link) {
         getDriver().findElement(By.linkText(link)).click();
     }
-
     /********* Textos ************/
 
     public String obterTexto(By by) {
