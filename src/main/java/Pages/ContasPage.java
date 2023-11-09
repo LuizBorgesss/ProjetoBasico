@@ -13,6 +13,10 @@ public class ContasPage extends BasePage {
     public String obterMensagemSucesso(){
         return obterTexto(By.xpath("//div[@class='alert alert-success']"));
     }
+
+    public String obterMensagemErro(){
+        return obterTexto(By.xpath("//div[@class='alert alert-danger']"));
+    }
     public void editarConta(){
         clicarLink(By.xpath("//*[@id=\"tabelaContas\"]/tbody/tr/td[2]/a[1]/span"));
     }

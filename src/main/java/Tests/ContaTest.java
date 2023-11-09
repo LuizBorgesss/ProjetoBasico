@@ -32,4 +32,12 @@ public class ContaTest extends BaseTest {
         Assert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
     }
 
+    @Test
+    public void testInserirContaComMesmoNome(){
+        menuPage.acessarTelaInserirConta();
+        contasPage.setNome("Conta2");
+        contasPage.salvar();
+
+        Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
+    }
 }
